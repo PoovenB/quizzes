@@ -1,9 +1,12 @@
 ﻿using System.Reflection;
+using System.Text.RegularExpressions;
 
 namespace Quizzes;
 
 public static class QuizRunner
 {
+  private static readonly Regex quizNumber = new Regex(@"Quiz(\d+)", RegexOptions.Compiled);
+
   /// <summary>
   /// Gets all types defined in the assembly that implement the specified
   /// base type.
@@ -24,12 +27,15 @@ public static class QuizRunner
   public static IEnumerable<TInstance> CreateInstances<TInstance>(this Assembly assembly)
       => assembly.GetTypesOf<TInstance>().Select(type => (TInstance)Activator.CreateInstance(type));
 
+  private static int GetQuizNumber(this string quizName)
+    => int.Parse(quizNumber.Match(quizName).Groups[1].Value);
+
   public static void RunAllQuizzes()
   {
     var quizzes = Assembly
       .GetExecutingAssembly()
       .CreateInstances<RunnableQuiz>()
-      .OrderBy(quiz => quiz.GetType().Name);
+      .OrderBy(quiz => quiz.GetType().Name.GetQuizNumber());
     foreach (var quiz in quizzes)
     {
       quiz.Run();
