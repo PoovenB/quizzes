@@ -1,0 +1,3 @@
+﻿using Quizzes;
+
+QuizRunner.RunAllQuizzes();
