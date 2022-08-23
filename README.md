@@ -378,9 +378,9 @@ Are HTTP websites safe to use?
 
 Let's consider a website that neither has user, nor any other sensitive information. If a [man-in-the-middle attack](https://en.wikipedia.org/wiki/Man-in-the-middle_attack) was done, what's the worst that could happen?
 
-1.  No information is lost, because there's nothing to steal[^1].
+1.  No information is lost, because there's nothing to steal[^3].
 2.  The content could be tampered.
-3.  Some other nefarious thing that you haven't considered, or doesn't yet exist[^2]. That is, you're exposing an [attack surface](https://en.wikipedia.org/wiki/Attack_surface) by not following best-practice[^3].
+3.  Some other nefarious thing that you haven't considered, or doesn't yet exist[^4]. That is, you're exposing an [attack surface](https://en.wikipedia.org/wiki/Attack_surface) by not following best-practice[^5].
 
 It's the second case that I wanted to highlight: the point of HTTPS isn't just to protect sensitive information. HTTPS also allows the browser to verify the source of the data.
 
@@ -388,9 +388,9 @@ In Chrome, if you click on the lock icon in the omnibox, and access the site *C
 
 So in conclusion, you should use HTTPS for all traffic, regardless of the purpose of your site. See here for details, and references of tampered content: <https://doesmysiteneedhttps.com/>. My favourite was this one: <https://twitter.com/konklone/status/598696478018666496>
 
-[^1] The act of viewing the website might facilitate [social hacking](https://en.wikipedia.org/wiki/Social_hacking), or expose other [trackable information](https://amiunique.org/).
-[^2] For example, hyper-threading as been around for a while, but [a vulnerability was recently found](https://www.tomshardware.com/news/intel-disable-hyper-threading-spectre-attack,39333.html).
-[^3] For example, [Google](https://developers.google.com/web/fundamentals/security/encrypt-in-transit/why-https), and the [UK National Cyber Security Centre](https://www.ncsc.gov.uk/blog-post/serve-websites-over-https-always) recommend using HTTPS for all traffic.
+[^3]: The act of viewing the website might facilitate [social hacking](https://en.wikipedia.org/wiki/Social_hacking), or expose other [trackable information](https://amiunique.org/).
+[^4]: For example, hyper-threading as been around for a while, but [a vulnerability was recently found](https://www.tomshardware.com/news/intel-disable-hyper-threading-spectre-attack,39333.html).
+[^5]: For example, [Google](https://developers.google.com/web/fundamentals/security/encrypt-in-transit/why-https), and the [UK National Cyber Security Centre](https://www.ncsc.gov.uk/blog-post/serve-websites-over-https-always) recommend using HTTPS for all traffic.
 
 ## Quiz 9: Bitwise operations
 
